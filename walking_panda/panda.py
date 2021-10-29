@@ -4,8 +4,9 @@ from direct.showbase.ShowBase import ShowBase
 from direct.task import Task
 from direct.actor.Actor import Actor
 
-class MyApp(ShowBase):
-    def __init__(self):
+class WalkingPanda(ShowBase):
+    def __init__(self, no_rotate=False):
+        ## And The rest
         ShowBase.__init__(self)
 
         # Load the environment model.
@@ -13,7 +14,7 @@ class MyApp(ShowBase):
         # Reparent the model to render.
         self.scene.reparentTo(self.render)
         # Apply scale and position transforms on the model.
-        self.scene.setScale(0.25. 0.25, 0.25)
+        self.scene.setScale(0.25, 0.25, 0.25)
         self.scene.setPos(-8, 42, 0)
 
         # Add the spinCameraTask procedure to the task manager.
@@ -35,5 +36,3 @@ class MyApp(ShowBase):
         self.camera.setHpr(angleDegrees, 0, 0)
         return Task.cont
 
-app = MyApp()
-app.run()
