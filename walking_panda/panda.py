@@ -35,4 +35,3 @@ class WalkingPanda(ShowBase):
         self.camera.setPos(20 * sin(angleRadians), -20.0 * cos(angleRadians), 3)
         self.camera.setHpr(angleDegrees, 0, 0)
         return Task.cont
-
